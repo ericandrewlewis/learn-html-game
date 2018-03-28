@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="node_modules/codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="node_modules/codemirror-one-dark-theme/one-dark.css" />
+    <script type="text/javascript" src="node_modules/codemirror/mode/xml/xml.js"></script>
+    <script src="node_modules/codemirror/mode/css/css.js"></script>
+    <script src="node_modules/codemirror/mode/javascript/javascript.js"></script>
+    <script src="node_modules/codemirror/mode/xml/xml.js"></script>
+    <script src="node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <div class="copy">
+      <p>HTML is the language web pages are written in. An HTML file consists of elements,
+        which each represent one item on the web page.</p>
+      <p>An HTML element looks like this:</p>
+      <div style="text-align: center; font-size: 2rem; padding: 1rem"><code>&lt;road&gt;&lt;/road&gt;</code></div>
+      <p>The opening tag <code>&lt;road&gt;</code> includes the tag's name wrapped in a less than and greater than character.</p>
+      <p>The closing tag <code>&lt;/road&gt;</code> looks like an opening tag with a forward slash before the name.</p>
+      <p style="margin-bottom: 2rem">Add a road element in the HTML.</p>
+    </div>
+    <div class="codemirror-and-document-display-wrapper">
+      <div class="codemirror-root"></div>
+      <div class="document-display">
+        <iframe class="document-display-iframe"></iframe>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
