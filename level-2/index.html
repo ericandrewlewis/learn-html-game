@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="../node_modules/codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="../node_modules/codemirror-one-dark-theme/one-dark.css" />
+    <script type="text/javascript" src="../node_modules/codemirror/mode/xml/xml.js"></script>
+    <script src="../node_modules/codemirror/mode/css/css.js"></script>
+    <script src="../node_modules/codemirror/mode/javascript/javascript.js"></script>
+    <script src="../node_modules/codemirror/mode/xml/xml.js"></script>
+    <script src="../node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../node_modules/codemirror/addon/edit/closetag.js"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <title></title>
+  </head>
+  <body>
+    <div style="display: flex">
+      <div style="width: 50%">
+        <div class="copy">
+          <h1>Nested elements</h1>
+          <p>An HTML element can have children, which are placed between the opening and closing tags.</p>
+          <div style="margin-bottom: 1rem"><textarea class="codemirror-readonly"><parent>
+  <child />
+</parent></textarea></div>
+
+          <p>
+            The
+            <span class="cm-s-one-dark" role="presentation" style="padding: 0.25rem;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">child</span><span class="cm-tag cm-bracket"> /&gt;</span></span>
+            element above consists of only one tag. Some elements can't have children, so they don't need an opening and a closing tag.
+          </p>
+          <p>
+            <em>Add a
+            <span class="cm-s-one-dark" role="presentation" style="padding: 0.25rem;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">car</span><span class="cm-tag cm-bracket"> /&gt;</span></span>
+            element as a child of the
+            <span class="cm-s-one-dark" role="presentation" style="padding: 0.25rem;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">road</span><span class="cm-tag cm-bracket">&gt;</span></span>
+            below</em>.
+          </p>
+        </div>
+        <div class="codemirror-root"></div>
+      </div>
+      <div style="width: 50%;">
+        <iframe class="document-display-iframe"></iframe>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

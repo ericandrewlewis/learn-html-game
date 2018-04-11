@@ -10,28 +10,32 @@ for (let i = 0; i < textareas.length; i++) {
 }
 
 const iframe = document.querySelector(".document-display-iframe");
-const editor = CodeMirror.fromTextArea(
-  document.querySelector(".codemirror-editor"),
-  {
-    value: ``,
-    mode: "text/html",
-    theme: "one-dark",
-    tabSize: 2,
-    showCursorWhenSelecting: true,
-    undoDepth: 1000,
-    autofocus: true,
-    autoCloseTags: true,
-    viewportMargin: Infinity
-  }
-);
-
-editor.on("change", function(cm) {
-  if ("<road></road>" === cm.getValue()) {
-    console.log("yay");
-  }
+const editor = CodeMirror(document.querySelector(".codemirror-root"), {
+  value: `<road>\n  \n</road>`,
+  mode: "text/html",
+  theme: "one-dark",
+  tabSize: 2,
+  showCursorWhenSelecting: true,
+  undoDepth: 1000,
+  autofocus: true,
+  autoCloseTags: true,
+  viewportMargin: Infinity
 });
 
+editor.setCursor({ line: 1, ch: 2 });
+
+const selfClosingCarRegex = /<car([^>])*\/>/;
+// Expand self closing car tags <car /> to open and closing tags <car></car>
+const expandCarTags = html => {
+  let match;
+  while ((match = selfClosingCarRegex.exec(html))) {
+    html = html.replace(match[0], `<car${match[1]}></car>`);
+  }
+  return html;
+};
+
 const updateIframeDoc = html => {
+  html = expandCarTags(html);
   iframe.contentWindow.document.body.innerHTML = html;
 };
 
@@ -50,11 +54,11 @@ body {
 road {
   display: block;
   height: 150px;
-  background-image: url(road.svg);
+  background-image: url(../road.svg);
   background-repeat: repeat;
   background-size: 75px;
   margin-bottom: 1rem;
-  padding-top: 85px;
+  padding: 85px 15px 0;
   overflow: hidden;
 }
 road:nth-child(1) {
@@ -64,12 +68,12 @@ car {
   display: inline-block;
   height: 60px;
   width: 120px;
-  background-image: url(car.svg);
+  background-image: url(../car.svg);
   background-repeat: no-repeat;
   background-size: 110px;
 }
 car[style="blue"] {
-  background-image: url(car-blue.svg);
+  background-image: url(../car-blue.svg);
 }
 </style>`;
 

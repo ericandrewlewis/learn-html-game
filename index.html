@@ -5,8 +5,6 @@
     <script src="node_modules/codemirror/lib/codemirror.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css" />
     <link rel="stylesheet" href="node_modules/codemirror-one-dark-theme/one-dark.css" />
     <script type="text/javascript" src="node_modules/codemirror/mode/xml/xml.js"></script>
@@ -15,23 +13,40 @@
     <script src="node_modules/codemirror/mode/xml/xml.js"></script>
     <script src="node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script src="node_modules/codemirror/addon/edit/closetag.js"></script>
-
-
+    <link rel="stylesheet" href="style.css" />
     <title></title>
   </head>
   <body>
-    <div class="copy">
-      <p>HTML is the language web pages are written in. An HTML file consists of elements,
-        which each represent one item on the web page.</p>
-      <p>An HTML element looks like this:</p>
-      <div style="text-align: center; font-size: 2rem; padding: 1rem"><code>&lt;road&gt;&lt;/road&gt;</code></div>
-      <p>The opening tag <code>&lt;road&gt;</code> includes the tag's name wrapped in a less than and greater than character.</p>
-      <p>The closing tag <code>&lt;/road&gt;</code> looks like an opening tag with a forward slash before the name.</p>
-      <p style="margin-bottom: 2rem">Add a road element in the HTML.</p>
-    </div>
-    <div class="codemirror-and-document-display-wrapper">
-      <div class="codemirror-root"></div>
-      <div class="document-display">
+    <div style="display: flex">
+      <div class="left-sidebar">
+        <nav class="page-navigation">
+          Previous 1 / X Next
+        </nav>
+        <div class="copy">
+          <h1>HTML elements</h1>
+          <p>HTML is the language web pages are written in. HTML is made of elements,
+            which each represent one item on a web page.</p>
+          <p>An HTML element looks like this:</p>
+          <div style="text-align: center; margin-bottom: 1.5rem">
+            <span class="cm-s-one-dark" role="presentation" style="padding: 0.5rem;">
+              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">road</span><span class="cm-tag cm-bracket">&gt;&lt;/</span><span class="cm-tag">road</span><span class="cm-tag cm-bracket">&gt;</span>
+            </span>
+          </div>
+          <p>The opening tag
+            <span class="cm-s-one-dark" role="presentation" style="padding: 0.5rem;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">road</span><span class="cm-tag cm-bracket">&gt;</span></span>
+            consists of angle brackets with the element's name inside it.
+          </p>
+          <p>The closing tag
+            <span class="cm-s-one-dark" role="presentation" style="padding: 0.5rem;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">road</span><span class="cm-tag cm-bracket">&gt;</span></span>
+            is like an opening tag with a forward slash before the name.
+          </p>
+          <p><em>Create a road element in the editor below</em>.</p>
+        </div>
+        <div class="codemirror-root">
+          <textarea class="codemirror-editor"></textarea>
+        </div>
+      </div>
+      <div style="width: 50%;">
         <iframe class="document-display-iframe"></iframe>
       </div>
     </div>
